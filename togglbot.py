@@ -25,7 +25,7 @@ if ((3, 0) <= sys.version_info <= (3, 9)):
 elif ((2, 0) <= sys.version_info <= (2, 9)):
     from urlparse import urlparse
 
-ustring = "EMAIL:PASSWORD"
+ustring = "jandrews7348@floridapoly.edu:PASSWORD"
 username = "email@floridapoly.edu"
 password = "Password123"
 
@@ -86,6 +86,7 @@ sdate = str(os.popen('date --rfc-3339=seconds | sed \'s/ /T/g\'').read())
 
 # Build string
 #scommand = ("curl -v -u %s:api_token -H \"Content-Type: application/json\"\'{\"time_entry\":{\"description\":\"%s\",\"created_with\":\"togglbot\",\"start\":\"%s\",\"duration\":%i,\"wid\":3164178}}\' -X POST https://www.toggl.com/api/v8/time_entries" % APIT, hw1, sdate, slotv1)
+#os.system(scommand)
 
 # Build request 2.0
-os.system('curl -v -u str(os.popen('curl -s -u %s -X POST https://www.toggl.com/api/v8/reset_token | sed \'s/"//g\'' % ustring).read()):api_token -H \"Content-Type: application/json\"\'{\"time_entry\":{\"description\":"str(random.choice(hw))",\"created_with\":\"togglbot\",\"start\":\"str(os.popen(\'date --rfc-3339=seconds | sed \'s/ /T/g\'\').read())\",\"duration\":int(randint(1200,3600)),\"wid\":3164178}}\' -X POST https://www.toggl.com/api/v8/time_entries')
+os.system('curl -u '+str(os.popen('curl -s -u %s -X POST https://www.toggl.com/api/v8/reset_token | sed \'s/"//g\'' % ustring).read())+':api_token -H \"Content-Type: application/json\"\'{\"time_entry\":{\"description\":'+str(random.choice(hw))+',\"created_with\":\"togglbot\",\"start\":'+str(os.popen('date --rfc-3339=seconds | sed \'s/ /T/g\"').read())+',duration:'+str(int(randint(1200,3600)))+',wid\":3164178}}\' -X POST https://www.toggl.com/api/v8/time_entries')
