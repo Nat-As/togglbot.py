@@ -7,6 +7,6 @@ togglbot (exclusively on python)
 + Run and enjoy!
 
 ## Progress:
-[x] Create sudo-data
-[x] Authenticate API token
-[] Re-format final shell request to Python request
+- [x] Create sudo-data
+- [x] Authenticate API token
+- [ ] Re-format final shell request to Python request
