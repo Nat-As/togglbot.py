@@ -6,10 +6,10 @@ togglbot 2.0 packaged (exclusively on python) for multi-platform
 + ./togglbot.py
 + Run and enjoy!
 
-## Progress:
-- [x] Create sudo-data
-- [x] Authenticate API token
-- [ ] Re-format final shell request to Python request
+## Support:
+- [x] Linux
+- [x] Mac
+- [ ] Windows
 
 ## API Documentation
 + https://github.com/toggl/toggl_api_docs
