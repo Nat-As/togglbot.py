@@ -10,3 +10,6 @@ togglbot 2.0 packaged (exclusively on python) for multi-platform
 - [x] Create sudo-data
 - [x] Authenticate API token
 - [ ] Re-format final shell request to Python request
+
+## API Documentation
++ https://github.com/toggl/toggl_api_docs
