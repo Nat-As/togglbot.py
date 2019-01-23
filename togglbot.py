@@ -4,6 +4,7 @@
 #Jandrews7348@floridapoly.edu
 #2019-01-09 14:21:38
 
+import time
 import datetime
 import http.client
 import urllib2
@@ -32,9 +33,11 @@ password = "Password123"
 
 now = datetime.datetime.now()
 time = now.hour
-print now.hour, now.minute
 
 while now.hour > 7:
+	now = datetime.datetime.now()
+	time = now.hour
+	print now.hour, now.minute
 # SEED
 	slotv1 = int(randint(1200,3600))
 	slotv2 = randint(1200,3600)
@@ -91,6 +94,14 @@ while now.hour > 7:
 	request1 = requests.post('https://www.toggl.com/api/v8/time_entries', auth=(APIT, 'api_token'), data=json.dumps(time_entry1))
 	if not request1: # request.Response returns True if status 'OK'
 		print(request1.text)
-	sleep(3600)
+
+	i = slotv1
+	while i != 0:
+		print i
+		sleep(1)
+		i = i - 1
+		sys.stdout.write("\033[F")
+		if i == 0:
+			break
 	now = datetime.datetime.now()
 
