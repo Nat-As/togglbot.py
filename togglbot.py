@@ -11,7 +11,6 @@ import requests
 import json
 import sys
 import re
-import os
 import random
 import subprocess
 import base64
