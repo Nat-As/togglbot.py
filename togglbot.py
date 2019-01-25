@@ -4,7 +4,6 @@
 #Jandrews7348@floridapoly.edu
 #2019-01-09 14:21:38
 
-import time
 import datetime
 import http.client
 import urllib2
@@ -15,6 +14,7 @@ import re
 import os
 import random
 import subprocess
+import base64
 
 from time import sleep
 from dateutil.tz import tzoffset
@@ -27,9 +27,11 @@ if ((3, 0) <= sys.version_info <= (3, 9)):
 elif ((2, 0) <= sys.version_info <= (2, 9)):
     from urlparse import urlparse
 
-ustring = "jandrews7348@floridapoly.edu:PASSWORD"
-username = "email@floridapoly.edu"
-password = "Password123"
+# Ask and encrypt username and passcode
+print "IMPORTANT!"
+print "Format Must be USERNAME:PASSWORD\n"
+passk = raw_input("Enter your username:password ==> ")
+key = base64.b64encode(passk)
 
 now = datetime.datetime.now()
 time = now.hour
@@ -37,6 +39,7 @@ time = now.hour
 while now.hour > 7:
 	now = datetime.datetime.now()
 	time = now.hour
+	print "+ Logging in...\n" # Jump to line 68
 	print now.hour, now.minute
 # SEED
 	slotv1 = int(randint(1200,3600))
@@ -64,7 +67,15 @@ while now.hour > 7:
 	
 	# Get API Token
 	wid = 3164178
-	APIT = str(os.popen('curl -s -u %s -X POST https://www.toggl.com/api/v8/reset_token | sed \'s/"//g\'' % ustring).read())
+	headers = { 'Authorization' : 'Basic %s' %  key }
+	tokenrequest = requests.post('https://www.toggl.com/api/v8/reset_token', headers=headers)
+	
+	# Did it work?
+	print "Status:", tokenrequest.status_code
+	API = tokenrequest.text
+	APIT = json.loads(API)
+
+#	APIT = str(os.popen('curl -s -u %s -X POST https://www.toggl.com/api/v8/reset_token | sed \'s/"//g\'' % ustring).read())
 	
 	# Test Token
 	if len(APIT) > 1:
@@ -97,7 +108,7 @@ while now.hour > 7:
 
 	i = slotv1
 	while i != 0:
-		print i
+		print "Next request in:", i
 		sleep(1)
 		i = i - 1
 		sys.stdout.write("\033[F")
