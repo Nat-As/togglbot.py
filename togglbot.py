@@ -74,17 +74,12 @@ while now.hour > 7:
 	print "Status:", tokenrequest.status_code
 	API = tokenrequest.text
 	APIT = json.loads(API)
-
-#	APIT = str(os.popen('curl -s -u %s -X POST https://www.toggl.com/api/v8/reset_token | sed \'s/"//g\'' % ustring).read())
 	
 	# Test Token
 	if len(APIT) > 1:
 		print "--> Connected"
 		print "Token:", APIT
-		
-	
-# Build string
-	
+
 # Date
 	now = datetime.datetime.now(tzoffset('EDT', +4*60*60)).replace(microsecond=0)
 	sdate = now.isoformat()
@@ -97,9 +92,6 @@ while now.hour > 7:
 	}}
 # Check JSON
 	print "--> Request Sent:", time_entry1
-	
-	# Shell request 2.0 (cURL)
-	# os.system('curl -u '+str(os.popen('curl -s -u %s -X POST https://www.toggl.com/api/v8/reset_token | sed \'s/\"//g\'' % ustring).read())+':api_token -H \"Content-Type: application/json\" -d \'{\"time_entry\":{\"description\":\"'+str(random.choice(hw))+'\",\"created_with\":\"togglbot\",\"start\":'+str(os.popen('date --rfc-3339=seconds | sed \'s/ /T/g\'').read())+',duration:'+str(int(randint(1200,3600)))+',\"wid\":3164178}}\' -X POST https://www.toggl.com/api/v8/time_entries')
 	
 # Python Request 3.0
 	request1 = requests.post('https://www.toggl.com/api/v8/time_entries', auth=(APIT, 'api_token'), data=json.dumps(time_entry1))
