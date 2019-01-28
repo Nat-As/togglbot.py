@@ -1,5 +1,5 @@
 # togglbot.py
-togglbot 2.0 packaged (exclusively on python) for multi-platform? A bot I made to do my homework for me. Enjoy!
+togglbot 2.0 packaged (exclusively on python) for multi-platform? A bot I made to do my homework for me. Enjoy! Windows people install linux.
 
 ## Instructions
 + ./togglbot.py
@@ -9,7 +9,7 @@ togglbot 2.0 packaged (exclusively on python) for multi-platform? A bot I made t
 ## Support:
 - [x] Linux
 - [x] Mac
-- [x] Windows
+- [ ] Windows
 
 ### Linux
 + Simply run, ./togglbot.py
