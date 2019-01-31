@@ -15,9 +15,9 @@ togglbot 2.0 packaged (exclusively on python) for multi-platform? A bot I made t
 + Simply run, ./togglbot.py
 
 ### ~~Windows~~
-1. ~~Download zip
-2. ~~Decompress
-3. ~~Run togglbot.pyc
+1. ~~Download zip~~
+2. ~~Decompress~~
+3. ~~Run togglbot.pyc~~
 
 ## API Documentation
 + https://github.com/toggl/toggl_api_docs
