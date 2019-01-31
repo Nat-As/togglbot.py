@@ -32,6 +32,10 @@ print "Format Must be USERNAME:PASSWORD\n"
 passk = raw_input("Enter your username:password ==> ")
 key = base64.b64encode(passk)
 
+# Redact sensitive info
+sys.stdout.write("\033[F")
+sys.stdout.write("******************************************************")
+
 now = datetime.datetime.now()
 time = now.hour
 
