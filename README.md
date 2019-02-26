@@ -13,6 +13,7 @@ togglbot 2.0 packaged (exclusively on python) for multi-platform? A bot I made t
 
 ### Linux
 + Simply run, ./togglbot.py
++ You might need to change the WID to your personal workspace ID #
 
 ### ~~Windows~~
 1. ~~Download zip~~
