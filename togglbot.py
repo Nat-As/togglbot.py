@@ -14,6 +14,7 @@ import re
 import random
 import subprocess
 import base64
+import getpass
 
 from time import sleep
 from dateutil.tz import tzoffset
@@ -29,17 +30,14 @@ elif ((2, 0) <= sys.version_info <= (2, 9)):
 # Ask and encrypt username and passcode
 print "IMPORTANT!"
 print "Format Must be USERNAME:PASSWORD\n"
-passk = raw_input("Enter your username:password ==> ")
-key = base64.b64encode(passk)
+passk = getpass.getpass("Enter your username:password ==> ")
 
-# Redact sensitive info
-sys.stdout.write("\033[F")
-sys.stdout.write("******************************************************")
+key = base64.b64encode(passk)
 
 now = datetime.datetime.now()
 time = now.hour
 
-while now.hour > 7:
+while True:
 	now = datetime.datetime.now()
 	time = now.hour
 	print "+ Logging in...\n" # Jump to line 68
@@ -103,10 +101,9 @@ while now.hour > 7:
 
 	i = slotv1
 	while i != 0:
-		print "Next request in:", i
+		print ("Next request in: %s\r" % i)
 		sleep(1)
 		i = i - 1
-		sys.stdout.write("\033[F")
 		if i == 0:
 			break
 	now = datetime.datetime.now()
