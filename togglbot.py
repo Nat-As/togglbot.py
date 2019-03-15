@@ -73,6 +73,13 @@ while True:
 	
 	# Did it work?
 	print "Status:", tokenrequest.status_code
+	
+	# Login failed case
+	if tokenrequest.status_code != 200:
+            print "Login Error!"
+            break
+		
+	# Login success case
 	API = tokenrequest.text
 	APIT = json.loads(API)
 	
