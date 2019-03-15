@@ -1,9 +1,9 @@
 # togglbot.py
-togglbot 2.0 packaged (exclusively on python) for multi-platform? A bot I made to do my homework for me. Enjoy! Windows people install linux.
+togglbot 2.0 packaged (exclusively on python) for multi-platform? A bot I made to do my homework for me. Enjoy! Currently only working on linux.
 
 ## Instructions
 + ./togglbot.py
-+ be sure to type your account info in THIS FORMAT: EMAIL:PASSWORD
++ be sure to type your account info in THIS FORMAT: `EMAIL:PASSWORD`
 + Include the colon in between
 
 ## Support:
@@ -12,7 +12,7 @@ togglbot 2.0 packaged (exclusively on python) for multi-platform? A bot I made t
 - [ ] Windows
 
 ### Linux
-+ Simply run, ./togglbot.py
++ Simply run, `./togglbot.py` from a terminal
 + You might need to change the WID to your personal workspace ID #
 
 ### ~~Windows~~
