@@ -5,7 +5,6 @@
 #2019-01-09 14:21:38
 
 import datetime
-import http.client
 import urllib2
 import requests
 import json
