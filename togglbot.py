@@ -45,12 +45,6 @@ while True:
 # SEED
 	slotv1 = int(randint(1200,3600))
 	slotv2 = randint(1200,3600)
-	slotv3 = randint(1200,3600)
-	slotv4 = randint(1200,3600)
-	slotv5 = randint(1200,3600)
-	slotv6 = randint(1200,3600)
-	slotv7 = randint(1200,3600)
-	slotv8 = randint(1200,3600)
 	
 	#Add more activities to add more entropy and make it more interesting! |
 	
@@ -59,12 +53,6 @@ while True:
 	
 	hw1 = random.choice(hw)
 	hw2 = random.choice(hw)
-	hw3 = random.choice(hw)
-	hw4 = random.choice(hw)
-	hw5 = random.choice(hw)
-	hw6 = random.choice(hw)
-	hw7 = random.choice(hw)
-	hw8 = random.choice(hw)
 	
 	# Get API Token
 	wid = 3164178
